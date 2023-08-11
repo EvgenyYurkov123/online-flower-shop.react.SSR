@@ -30,6 +30,7 @@ const regRouter = require('./routes/regRouter');
 const errorPage = require('./routes/error');
 const profileRouter = require('./routes/profileRouter');
 const cardRouter = require('./routes/cardRRouter');
+const basketRouter = require('./routes/basketRouter');
 
 app.use(express.static(path.join(process.cwd(), 'public')));
 //app.use(express.static(path.resolve('public')));
@@ -44,6 +45,7 @@ app.use('/', loginRouter);
 app.use('/', regRouter);
 app.use('/', cardRouter);
 app.use('/', profileRouter);
+app.use('/', basketRouter);
 app.use('/404', errorPage);
 
 // app.get('*', (req, res) => {

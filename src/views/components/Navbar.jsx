@@ -1,11 +1,10 @@
 const React = require('react');
 
-module.exports = function Navbar({ user }) {
-  console.log(':::::::::<>', user);
-    return (
+module.exports = function Navbar({ userEmail, allCard }) {
+  return (
         
-      <nav user={user} className="navbar navbar-expand-lg bg-transparent">
-        {user ? (<div className="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-transparent">
+      {userEmail ? (<div className="container-fluid">
           <div className="container d-flex"  >
             <p className="nameMag d-flex navbar-brand" href="#">Онлайн магазин цветов</p>
 
@@ -26,6 +25,12 @@ module.exports = function Navbar({ user }) {
 
                 <li className="nav-item">
                   <a className="d-flex nav-link ml-auto VhodA" href="/profile">Профиль</a>
+                </li>
+                <li className="nav-item">
+                <a className="d-flex nav-link ml-auto VhodA" href={`/basket`}>
+                  <img src="/pictures/logoBask/2.png" className="logoBas d-flex align-items-end m-0" alt="Logo" />
+                </a>
+
                 </li>
                 <li className="nav-item">
                   <a className="d-flex nav-link ml-auto VhodA" href="/logout">Выйти</a>
@@ -78,4 +83,3 @@ module.exports = function Navbar({ user }) {
        
     );
 };
-

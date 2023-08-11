@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function Home({ allCateg }) {
+module.exports = function Home({ allCard, allCateg, userEmail }) {
   return (
-    <Layout>
+    <Layout userEmail={userEmail} allCard={allCard}>
         <div className="up1 ">
           <div className="btnHome ">
           <ul className=" btnHomeUL ">

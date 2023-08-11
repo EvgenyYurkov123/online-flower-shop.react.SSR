@@ -12,10 +12,7 @@ const Cards = require('../views/pages/Cards');
 cardRouter.get('/card/:id', async (req, res) => {
     const { id } = req.params;
 
-    const allCard = await Card.findAll({
-        where: { categoryId: id },
-        raw: true
-    });
+    const allCard = await Card.findAll({ where: { categoryId: id }, raw: true });
     renderTemplate(Cards, { allCard }, res);
 });
 

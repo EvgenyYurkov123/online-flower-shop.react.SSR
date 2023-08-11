@@ -2,9 +2,9 @@ const React = require('react');
 const Layout = require('../Layout');
 
 
-module.exports = function Login({user}) {
+module.exports = function Login({ userEmail, allCard }) {
   return (
-    <Layout user={user}>
+    <Layout userEmail={userEmail} allCard={allCard}>
       
       <div className="logBG">
         <div className=" formLog d-flex justify-content-center">
@@ -13,7 +13,7 @@ module.exports = function Login({user}) {
           <hr />
         </div>
         <h6 className="logMsg d-flex justify-content-center" />
-        <script defer src="/js/login.js" />
+        <script defer src="/js/log.js" />
         <div className="d-flex mt-1  max-w-700 position-relative  justify-content-center">
           <form  id="loginForm" > 
             <div className="mb-2">

@@ -1,11 +1,10 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function Cards({ allCard }) {
-    console.log('?????????????', allCard);
+module.exports = function Cards({ allCard, userEmail }) {
 
     return (
-        <Layout allCard={allCard}>
+        <Layout userEmail={userEmail} allCard={allCard}>
             <div className="cardFlag container-fluid   ">
                 <div className="  BGcard" >
                     {allCard.map((el, key) => (

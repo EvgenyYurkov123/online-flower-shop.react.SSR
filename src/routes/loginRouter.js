@@ -8,25 +8,25 @@ const { User } = require('../../db/models');
 const renderTemplate = require('../lib/renderTemplate');
 const Login = require('../views/pages/Login');
 
-loginRouter.get('/login', (req, res) => {
-  const userLogin = req.session.login;
-  const userEmail = req.session.email;
-  renderTemplate(Login, { userLogin, userEmail }, res);
+loginRouter.get('/login', async (req, res) => {
+  const userEmail = req.session.userEmail;
+  renderTemplate(Login, { userEmail }, res);
 });
 
 loginRouter.post('/login', async (req, res) => {
   const { login, email, password } = req.body;
-  req.session.login = login;
-  req.session.email = email;
+  
   try {
     const user = await User.findOne({ where: { email } });
     if (user) {
-      // const checkPassword = await bcrypt.compare(password, user.password);
-      const checkPassword = user.password;
-      if (checkPassword === password) {
-        req.session.login = user.login;
+      const checkPassword = await bcrypt.compare(password, user.password);
+      // const checkPassword = user.password;
+      if (checkPassword) {
+        req.session.userId = user.id;
+        req.session.userLogin = user.login;
+        req.session.userEmail = user.email;
         req.session.save(() => {
-          
+          console.log('req.session', req.session);
           res.json({ msg1: 'Вы успешно авторизованы!' });
         });
       } else {

@@ -5,9 +5,9 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = new FormData(form);
   const res = Object.fromEntries(data);
-  console.log('>>>>>>>>>>>', res);
   if (!res.email || !res.password || !res.login) {
     console.log('Введите свои данные!');
+    console.log('>>>>>>>>>>>', res.email);
   } else {
     try {
       const response = await fetch('/register', {
@@ -21,12 +21,17 @@ form.addEventListener('submit', async (e) => {
       if (result.err) {
         msg.innerText = result.err;
         msg.style.color = 'red';
+        setTimeout(() => {
+          msg.innerText = '';
+          form.value = ''; 
+        }, 2000);
       } if (result.msg) {
         msg.innerText = result.msg;
         msg.style.color = 'green';
         setTimeout(() => {
+          msg.innerText = ''
           window.location.href = '/profile';
-        }, 1000);
+        }, 2000);
       }
     } catch (error) {
       console.log('Всё плохо :((((', error);

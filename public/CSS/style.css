@@ -10,7 +10,35 @@
   overflow:scroll;
 }
 
+.formLog {
+  margin-top: 240px;
+}
+.formReg {
+  margin-top: 240px;
+
+}
+.regBG {
+background-image: url(../pictures/BG/13.jpg);
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  /* overflow: scroll; */
+}
   
+.logBG {
+background-image: url(../pictures/BG/13.jpg);
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  /* overflow: scroll; */
+}
+
 .nameMag {
   margin-bottom: 50px;
   font-family: 'Marck Script', cursive;
@@ -66,6 +94,12 @@ position: absolute;
     
 
 }
+
+.logoBas {
+width: 30px;
+height: 30px;
+}
+
 .up1 {
   display: flex;
   justify-content: center;
@@ -105,7 +139,7 @@ position: absolute;
   margin: 0 0 0 0;
     padding: 10px 0 0 0;
     border-radius: 30px;
-    border: 2px  #df10e38e;
+    border: 2px solid #df10e38e;
       /* Бордер */
       box-shadow: 0 0 50px rgba(248, 3, 223, 0.693);
       margin-top: 150px;
@@ -166,6 +200,89 @@ padding-top: 10px;
 .cardFlag {
  padding: 0;
 } 
+
+/* .tableProf {
+  border-collapse: collapse;
+    /* Объединение границ ячеек */
+    /* width: 100%; */
+    /* border: 3px solid #e11010; */
+    /* Граница всей таблицы */
+  /* } */ */
+/* Добавьте эти стили в ваш файл CSS */
+
+/* Стили для таблицы */
+/* Добавьте эти стили в ваш файл CSS */
+
+/* Стили для таблицы */
+.tableProf {
+  
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Стили для столбцов */
+.bordered-column {
+  border: 3px solid #da5d5d;
+  padding: 10px;
+  border-radius: 8px;
+  /* Радиус углов */
+  margin-right: 8px;
+  /* Отступ между столбцами */
+}
+
+/* Последний столбец не должен иметь отступ справа */
+.bordered-column:last-child {
+  margin-right: 0;
+}
+
+/* Стили для заголовков h3 */
+.bordered-header {
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  /* Радиус углов */
+  background-color: #f0f0f0;
+}
+
+/* Стили для ul и li */
+.bordered-column ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.bordered-column li {
+  margin-bottom: 10px;
+}
+
+
+/* .tableBask {
+  display: flex;
+  flex-direction: column;
+  border:black solid 2px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* .BGcard {
     background-color: #f9f9f9;

@@ -2,9 +2,9 @@ const React = require('react');
 const Layout = require('../Layout');
 
 
-module.exports = function Register() {
+module.exports = function Register({ userEmail }) {
   return (
-    <Layout>
+    <Layout userEmail={userEmail}>
       <div className="Der regBG">
         <div className=" ddd formReg">
 
