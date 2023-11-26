@@ -21,9 +21,7 @@ basketRouter.post('/api/cart/add/:id', async (req, res) => {
     try {
         const card = await Card.findByPk(id);
         if (card) {
-            // В этом месте вы можете сохранить информацию о товаре в сессии, локальном хранилище и т.д.
-            // Здесь предполагается, что вы создадите некоторый механизм для хранения корзины.
-            // В данном случае, просто пример добавления товара в корзину.
+           
             res.json({ success: true, message: 'Товар добавлен в корзину' });
         } else {
             res.json({ success: false, message: 'Товар не найден' });

@@ -7,7 +7,6 @@ form.addEventListener('submit', async (e) => {
   const res = Object.fromEntries(data);
   if (!res.email || !res.password || !res.login) {
     console.log('Введите свои данные!');
-    console.log('>>>>>>>>>>>', res.email);
   } else {
     try {
       const response = await fetch('/register', {
